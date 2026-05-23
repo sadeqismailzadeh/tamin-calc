@@ -11,6 +11,11 @@
       name: "IHIO (بیمه سلامت / خدمات درمانی)",
       matches: () => document.querySelector(".AvicoCMPTemplateTreeTable") !== null,
       parse: parseIhio
+    },
+    {
+      name: "Esakhad (نیروهای مسلح)",
+      matches: () => document.querySelector("p-table.operationTable") !== null,
+      parse: parseEsakhad
     }
   ];
 
@@ -71,29 +76,31 @@
     const rows = document.querySelectorAll(".AvicoCMPTemplateTreeTable table tbody tr[avi-t='p'][iscombineddrug]");
 
     rows.forEach(row => {
-      // رفع باگ جداول تو در تو با استفاده از سلکتور :scope > td
-      // این سلکتور فقط td های فرزند مستقیم سطر اصلی را برمی‌گرداند (دقیقا ۱۲ ستون اصلی)
+      // استفاده از :scope > td برای جلوگیری از تداخل با جداول تو در تو
       const cells = row.querySelectorAll(":scope > td");
       if (cells.length < 8) return;
 
-      // 1. کد دارو: ستون اول (ایندکس 0) یا اتریبیوت سطر
-      let code = row.getAttribute("nationalnumber") || "";
+      // 1. کد دارو: اولویت با کد ژنریک (برای هماهنگی با تامین)، در غیر اینصورت کد ملی 16 رقمی
+      let genericCode = row.getAttribute("genericcode");
+      let nationalNumber = row.getAttribute("nationalnumber");
+      
+      let code = genericCode || nationalNumber || "";
       if (!code) {
         const codeSpan = cells[0].querySelector("span");
         code = codeSpan ? codeSpan.innerText.trim() : cells[0].innerText.trim();
       }
 
-      // 2. نام دارو: ستون دوم (ایندکس 1)
+      // 2. نام دارو: ستون دوم
       const nameSpan = cells[1].querySelector("span");
       const name = nameSpan ? nameSpan.innerText.trim() : cells[1].innerText.trim();
 
-      // 3. تعداد ارائه شده: ستون چهارم (ایندکس 3) و در صورت خالی بودن ستون سوم (ایندکس 2)
+      // 3. تعداد ارائه شده
       let qty = parseInt(cells[3].innerText.trim(), 10);
       if (isNaN(qty)) {
         qty = parseInt(cells[2].innerText.trim(), 10) || 0; 
       }
 
-      // 4. مبالغ: استفاده از اتریبیوت‌های دقیق سطر (amount و orgamount)
+      // 4. مبالغ: از اتریبیوت‌های دقیق سطر
       let total = parseFloat(row.getAttribute("amount"));
       if (isNaN(total)) {
         total = parseFloat(cells[5].innerText.trim().replace(/,/g, '')) || 0;
@@ -111,4 +118,46 @@
     
     return data;
   }
+
+   function parseEsakhad() {
+    const data = [];
+    // انتخاب سطرهای جدول (بدون در نظر گرفتن tfoot و th)
+    const rows = document.querySelectorAll("p-table.operationTable tbody.p-datatable-tbody > tr");
+
+    rows.forEach(row => {
+      // دریافت سلول‌های مستقیم همان سطر
+      const cells = row.querySelectorAll(":scope > td");
+      
+      // اگر تعداد ستون‌ها کمتر از 11 باشد، یعنی سطر مربوط به داده‌های دارو نیست
+      if (cells.length < 11) return;
+
+      // 1. کد دارو (ستون دوم)
+      const code = cells[1].innerText.trim();
+
+      // 2. نام دارو (ستون سوم) - حذف سه نقطه اضافه در انتهای نام‌های طولانی
+      let name = cells[2].innerText.trim();
+      name = name.replace(/\s*\.\.\.$/, ''); 
+
+      // 3. تعداد (اولویت با "تعداد ارائه" در ستون پنجم، سپس "تعداد تجویز" در ستون چهارم)
+      let qty = parseInt(cells[4].innerText.trim(), 10);
+      if (isNaN(qty)) {
+        qty = parseInt(cells[3].innerText.trim(), 10) || 0;
+      }
+
+      // 4. مبالغ
+      // مبلغ کل (ستون یازدهم)
+      const total = parseFloat(cells[10].innerText.trim().replace(/,/g, '')) || 0;
+      
+      // مبلغ پرداختی سازمان (ستون هشتم: سهم سازمان و یارانه ارزی)
+      const orgPaid = parseFloat(cells[7].innerText.trim().replace(/,/g, '')) || 0;
+
+      // 5. محاسبه درصد
+      const officialPercent = total > 0 ? ((orgPaid / total) * 100).toFixed(7) : "0.0000000";
+
+      data.push({ code, name, qty, total, orgPaid, officialPercent });
+    });
+
+    return data;
+  }
+
 })();

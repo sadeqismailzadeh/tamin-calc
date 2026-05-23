@@ -4,12 +4,12 @@ chrome.action.onClicked.addListener((tab) => {
   // لیست دامنه‌های مجاز. برای اضافه کردن سایت‌های جدید در آینده، دامنه را اینجا اضافه کنید.
   const allowedDomains = [
     "tamin.ir",             // سایت تامین اجتماعی
-    "ihio.gov.ir"           // سایت بیمه سلامت / خدمات درمانی / نیروهای مسلح
+    "ihio.gov.ir",          // سایت بیمه سلامت / خدمات درمانی
+    "esakhad.esata.ir"      // سایت بیمه نیروهای مسلح
   ];
 
   const isAllowed = allowedDomains.some(domain => tab.url.includes(domain));
 
-  // اجازه اجرا روی سایت‌های مجاز یا فایل‌های لوکال (برای تست)
   if (isAllowed || tab.url.startsWith("file://")) {
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
