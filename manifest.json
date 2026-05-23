@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Tamin Coverage Calculator",
+  "version": "1.0",
+  "description": "Calculates real insurance coverage percentages and prints details.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Calculate and Print"
+  }
+}
