@@ -1,6 +1,4 @@
 (function() {
-  // ساختار ماژولار برای تعریف سایت‌های مختلف
-  // برای اضافه کردن سایت جدید، کافیست یک آبجکت جدید به این آرایه اضافه کنید.
   const parsers = [
     {
       name: "Tamin (تامین اجتماعی)",
@@ -45,7 +43,7 @@
   }
 
   // ==========================================
-  // توابع استخراج (Parsers) اختصاصی هر سایت
+  // توابع استخراج
   // ==========================================
 
   function parseTamin() {
@@ -60,11 +58,14 @@
         const name = cells[2].innerText.trim();
         const qty = parseInt(cells[3].innerText.trim(), 10) || 0;
         
+        // ایندکس ۶: مجموع کل | ایندکس ۱۱: سهم بیمار
         const total = parseFloat(cells[6].innerText.trim().replace(/,/g, '')) || 0;
-        const orgPaid = parseFloat(cells[7].innerText.trim().replace(/,/g, '')) || 0;
-        const officialPercent = total > 0 ? ((orgPaid / total) * 100).toFixed(7) : "0.0000000";
+        const patientPaid = parseFloat(cells[11].innerText.trim().replace(/,/g, '')) || 0;
+        
+        // فرمول جدید: (مبلغ کل - سهم بیمار) تقسیم بر مبلغ کل * 100
+        const officialPercent = total > 0 ? (((total - patientPaid) / total) * 100).toFixed(7) : "0.0000000";
 
-        data.push({ code, name, qty, total, orgPaid, officialPercent });
+        data.push({ code, name, qty, total, patientPaid, officialPercent });
       }
     });
     return data;
@@ -100,20 +101,21 @@
         qty = parseInt(cells[2].innerText.trim(), 10) || 0; 
       }
 
-      // 4. مبالغ: از اتریبیوت‌های دقیق سطر
+      // استخراج مبلغ کل و سهم بیمار
       let total = parseFloat(row.getAttribute("amount"));
       if (isNaN(total)) {
         total = parseFloat(cells[5].innerText.trim().replace(/,/g, '')) || 0;
       }
 
-      let orgPaid = parseFloat(row.getAttribute("orgamount"));
-      if (isNaN(orgPaid)) {
-        orgPaid = parseFloat(cells[7].innerText.trim().replace(/,/g, '')) || 0;
+      let patientPaid = parseFloat(row.getAttribute("patientpayment"));
+      if (isNaN(patientPaid)) {
+        patientPaid = parseFloat(cells[6].innerText.trim().replace(/,/g, '')) || 0;
       }
 
-      const officialPercent = total > 0 ? ((orgPaid / total) * 100).toFixed(7) : "0.0000000";
+      // فرمول جدید
+      const officialPercent = total > 0 ? (((total - patientPaid) / total) * 100).toFixed(7) : "0.0000000";
 
-      data.push({ code, name, qty, total, orgPaid, officialPercent });
+      data.push({ code, name, qty, total, patientPaid, officialPercent });
     });
     
     return data;
@@ -144,20 +146,16 @@
         qty = parseInt(cells[3].innerText.trim(), 10) || 0;
       }
 
-      // 4. مبالغ
-      // مبلغ کل (ستون یازدهم)
+      // ایندکس ۱۰: مبلغ کل | ایندکس ۹: پرداختی بیمار
       const total = parseFloat(cells[10].innerText.trim().replace(/,/g, '')) || 0;
-      
-      // مبلغ پرداختی سازمان (ستون هشتم: سهم سازمان و یارانه ارزی)
-      const orgPaid = parseFloat(cells[7].innerText.trim().replace(/,/g, '')) || 0;
+      const patientPaid = parseFloat(cells[9].innerText.trim().replace(/,/g, '')) || 0;
 
-      // 5. محاسبه درصد
-      const officialPercent = total > 0 ? ((orgPaid / total) * 100).toFixed(7) : "0.0000000";
+      // فرمول جدید
+      const officialPercent = total > 0 ? (((total - patientPaid) / total) * 100).toFixed(7) : "0.0000000";
 
-      data.push({ code, name, qty, total, orgPaid, officialPercent });
+      data.push({ code, name, qty, total, patientPaid, officialPercent });
     });
 
     return data;
   }
-
 })();
