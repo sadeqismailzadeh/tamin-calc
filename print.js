@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!data) return;
 
     const tbody = document.querySelector("#resultTable tbody");
+    
+    // پاک کردن اطلاعات قبلی جدول (برای جلوگیری از تکرار هنگام رفرش)
+    tbody.innerHTML = '';
+
     let sumTotal = 0;
     let sumOrgPaid = 0;
 
@@ -23,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
       tbody.appendChild(row);
     });
 
-    // Calculate final summary percentage to 7 decimal places
     const finalOfficialPercent = sumTotal > 0 ? ((sumOrgPaid / sumTotal) * 100).toFixed(7) : "0.0000000";
 
     const totalRow = document.createElement("tr");
@@ -38,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Formats numbers with English digits and commas
 function formatNumber(num) {
   return num.toLocaleString('en-US');
 }
