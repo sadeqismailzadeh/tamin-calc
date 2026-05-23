@@ -71,27 +71,29 @@
     const rows = document.querySelectorAll(".AvicoCMPTemplateTreeTable table tbody tr[avi-t='p'][iscombineddrug]");
 
     rows.forEach(row => {
-      const cells = row.querySelectorAll("td");
+      // رفع باگ جداول تو در تو با استفاده از سلکتور :scope > td
+      // این سلکتور فقط td های فرزند مستقیم سطر اصلی را برمی‌گرداند (دقیقا ۱۲ ستون اصلی)
+      const cells = row.querySelectorAll(":scope > td");
       if (cells.length < 8) return;
 
-      // 1. کد دارو: خواندن از اتریبیوت به عنوان اولویت، سپس از داخل سلول اول
+      // 1. کد دارو: ستون اول (ایندکس 0) یا اتریبیوت سطر
       let code = row.getAttribute("nationalnumber") || "";
       if (!code) {
         const codeSpan = cells[0].querySelector("span");
         code = codeSpan ? codeSpan.innerText.trim() : cells[0].innerText.trim();
       }
 
-      // 2. نام دارو: داخل تگ span سلول دوم
+      // 2. نام دارو: ستون دوم (ایندکس 1)
       const nameSpan = cells[1].querySelector("span");
       const name = nameSpan ? nameSpan.innerText.trim() : cells[1].innerText.trim();
 
-      // 3. تعداد ارائه شده: سلول چهارم (ایندکس 3)
+      // 3. تعداد ارائه شده: ستون چهارم (ایندکس 3) و در صورت خالی بودن ستون سوم (ایندکس 2)
       let qty = parseInt(cells[3].innerText.trim(), 10);
       if (isNaN(qty)) {
-        qty = parseInt(cells[2].innerText.trim(), 10) || 0; // بازگشت به تعداد تجویز در صورت خالی بودن
+        qty = parseInt(cells[2].innerText.trim(), 10) || 0; 
       }
 
-      // 4. مبالغ: استفاده از اتریبیوت‌های دقیق سطر (amount و orgamount) که در سورس سایت وجود دارد
+      // 4. مبالغ: استفاده از اتریبیوت‌های دقیق سطر (amount و orgamount)
       let total = parseFloat(row.getAttribute("amount"));
       if (isNaN(total)) {
         total = parseFloat(cells[5].innerText.trim().replace(/,/g, '')) || 0;
@@ -102,7 +104,6 @@
         orgPaid = parseFloat(cells[7].innerText.trim().replace(/,/g, '')) || 0;
       }
 
-      // محاسبه درصد به صورت خودکار
       const officialPercent = total > 0 ? ((orgPaid / total) * 100).toFixed(7) : "0.0000000";
 
       data.push({ code, name, qty, total, orgPaid, officialPercent });
