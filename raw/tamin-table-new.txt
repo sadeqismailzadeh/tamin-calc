@@ -1,0 +1,77 @@
+<table id="ctl00_ContentPlaceHolder1_grdItems_DXMainTable" class="dxgvTable_Office2003Blue" cellspacing="0" cellpadding="0" dir="rtl" border="0" style="width:100%;border-collapse:collapse;empty-cells:show;table-layout:fixed;overflow:hidden;">
+				<tbody><tr>
+					<td style="width:22px;"></td><td style="width:60px;"></td><td style="width:170px;"></td><td style="width:35px;"></td><td style="width:90px;"></td><td style="width:150px;"></td><td style="width:80px;"></td><td style="width:120px;"></td><td style="width:80px;"></td><td style="width:80px;"></td><td style="width:130px;"></td><td style="width:130px;"></td><td style="width:72px;"></td><td style="width:90px;"></td><td></td>
+				</tr><tr id="ctl00_ContentPlaceHolder1_grdItems_DXHeadersRow0">
+					<td class="dxgvHeader_Office2003Blue" align="right" style="text-align:Right;border-top-width:0px;border-right-width:0px;cursor:default;"><img class="dxGridView_gvExpandedButton_Office2003Blue" src="/DXR.axd?r=1_5-w5pas" alt="" style="visibility:hidden;"></td><td id="ctl00_ContentPlaceHolder1_grdItems_col1" class="dxgvHeader_Office2003Blue" align="right" onmousedown="aspxGVHeaderMouseDown('ctl00_ContentPlaceHolder1_grdItems', this, event);" style="text-align:Right;border-top-width:0px;border-left-width:0px;border-right-width:0px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+						<tbody><tr>
+							<td style="text-align:Right;">کد دارو</td>
+						</tr>
+					</tbody></table></td><td id="ctl00_ContentPlaceHolder1_grdItems_col2" class="dxgvHeader_Office2003Blue" align="right" onmousedown="aspxGVHeaderMouseDown('ctl00_ContentPlaceHolder1_grdItems', this, event);" style="text-align:Right;border-top-width:0px;border-left-width:0px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+						<tbody><tr>
+							<td style="text-align:Right;">نام دارو</td>
+						</tr>
+					</tbody></table></td><td id="ctl00_ContentPlaceHolder1_grdItems_col3" class="dxgvHeader_Office2003Blue" align="right" onmousedown="aspxGVHeaderMouseDown('ctl00_ContentPlaceHolder1_grdItems', this, event);" style="text-align:Right;border-top-width:0px;border-left-width:0px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+						<tbody><tr>
+							<td style="text-align:Right;">تعداد</td>
+						</tr>
+					</tbody></table></td><td id="ctl00_ContentPlaceHolder1_grdItems_col6" class="dxgvHeader_Office2003Blue" align="right" onmousedown="aspxGVHeaderMouseDown('ctl00_ContentPlaceHolder1_grdItems', this, event);" style="text-align:Right;border-top-width:0px;border-left-width:0px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+						<tbody><tr>
+							<td style="text-align:Right;">دستور مصرف</td>
+						</tr>
+					</tbody></table></td><td id="ctl00_ContentPlaceHolder1_grdItems_col7" class="dxgvHeader_Office2003Blue" align="right" onmousedown="aspxGVHeaderMouseDown('ctl00_ContentPlaceHolder1_grdItems', this, event);" style="color:Blue;text-align:Right;border-top-width:0px;border-left-width:0px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+						<tbody><tr>
+							<td style="color:Blue;text-align:Right;">درصد تعهد سازمان از کل مبلغ</td>
+						</tr>
+					</tbody></table></td><td id="ctl00_ContentPlaceHolder1_grdItems_col8" class="dxgvHeader_Office2003Blue" align="right" onmousedown="aspxGVHeaderMouseDown('ctl00_ContentPlaceHolder1_grdItems', this, event);" style="text-align:Right;border-top-width:0px;border-left-width:0px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+						<tbody><tr>
+							<td style="text-align:Right;">مجموع</td>
+						</tr>
+					</tbody></table></td><td id="ctl00_ContentPlaceHolder1_grdItems_col9" class="dxgvHeader_Office2003Blue" align="right" onmousedown="aspxGVHeaderMouseDown('ctl00_ContentPlaceHolder1_grdItems', this, event);" style="text-align:Right;border-top-width:0px;border-left-width:0px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+						<tbody><tr>
+							<td style="text-align:Right;">مبلغ پرداختی سازمان</td>
+						</tr>
+					</tbody></table></td><td id="ctl00_ContentPlaceHolder1_grdItems_col10" class="dxgvHeader_Office2003Blue" align="right" onmousedown="aspxGVHeaderMouseDown('ctl00_ContentPlaceHolder1_grdItems', this, event);" style="text-align:Right;border-top-width:0px;border-left-width:0px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+						<tbody><tr>
+							<td style="text-align:Right;">سهم سازمان</td>
+						</tr>
+					</tbody></table></td><td id="ctl00_ContentPlaceHolder1_grdItems_col11" class="dxgvHeader_Office2003Blue" align="right" onmousedown="aspxGVHeaderMouseDown('ctl00_ContentPlaceHolder1_grdItems', this, event);" style="text-align:Right;border-top-width:0px;border-left-width:0px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+						<tbody><tr>
+							<td style="text-align:Right;">مبلغ یارانه</td>
+						</tr>
+					</tbody></table></td><td id="ctl00_ContentPlaceHolder1_grdItems_col12" class="dxgvHeader_Office2003Blue" align="right" onmousedown="aspxGVHeaderMouseDown('ctl00_ContentPlaceHolder1_grdItems', this, event);" style="text-align:Right;border-top-width:0px;border-left-width:0px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+						<tbody><tr>
+							<td style="text-align:Right;">سهم صندوق صعب العلاج</td>
+						</tr>
+					</tbody></table></td><td id="ctl00_ContentPlaceHolder1_grdItems_col13" class="dxgvHeader_Office2003Blue" align="right" onmousedown="aspxGVHeaderMouseDown('ctl00_ContentPlaceHolder1_grdItems', this, event);" style="text-align:Right;border-top-width:0px;border-left-width:0px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+						<tbody><tr>
+							<td style="text-align:Right;">سهم طرح پزشک خانواده</td>
+						</tr>
+					</tbody></table></td><td id="ctl00_ContentPlaceHolder1_grdItems_col14" class="dxgvHeader_Office2003Blue" align="right" onmousedown="aspxGVHeaderMouseDown('ctl00_ContentPlaceHolder1_grdItems', this, event);" style="color:Red;text-align:Right;border-top-width:0px;border-left-width:0px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+						<tbody><tr>
+							<td style="color:Red;text-align:Right;">سهم بیمار</td>
+						</tr>
+					</tbody></table></td><td id="ctl00_ContentPlaceHolder1_grdItems_col15" class="dxgvHeader_Office2003Blue" align="right" onmousedown="aspxGVHeaderMouseDown('ctl00_ContentPlaceHolder1_grdItems', this, event);" style="text-align:Right;border-top-width:0px;border-left-width:0px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+						<tbody><tr>
+							<td style="text-align:Right;">دستور مصرف</td>
+						</tr>
+					</tbody></table></td><td class="dxgvTable_Office2003Blue"></td>
+				</tr><tr id="ctl00_ContentPlaceHolder1_grdItems_DXDataRow0" class="dxgvDataRow_Office2003Blue">
+					<td class="dxgvDetailButton_Office2003Blue dxgv" align="right" style="border-right-width:0px;overflow:visible;"><img class="dxGridView_gvDetailCollapsedButtonRtl_Office2003Blue" onclick="aspxGVShowDetailRow('ctl00_ContentPlaceHolder1_grdItems',0);event.cancelBubble = true" src="/DXR.axd?r=1_5-w5pas" alt="[Expand]" style="cursor:pointer;"></td><td class="dxgv" align="right" style="border-right-width:0px;">02406</td><td class="dxgv" align="right">ALENDRONATE (AS SODIUM) 70 mg TABLET ORAL</td><td class="dxgv" align="right">8</td><td class="dxgv" align="right">هفته اي يک بار يک عدد-Tab/Cap
+</td><td class="dxgv" align="right" style="color:Blue;">97.36%</td><td class="dxgv" align="right">800000</td><td class="dxgv" align="right">778903</td><td class="dxgv" align="right">189879</td><td class="dxgv" align="right">589024</td><td class="dxgv" align="right">0</td><td class="dxgv" align="right">&nbsp;</td><td class="dxgv" align="right" style="color:Red;">21097</td><td class="dxgv" align="right" style="border-left-width:0px;">هفته اي يک بار يک عدد-Tab/Cap
+</td><td class="dxgvTable_Office2003Blue"></td>
+				</tr><tr id="ctl00_ContentPlaceHolder1_grdItems_DXDataRow1" class="dxgvDataRow_Office2003Blue dxgvDataRowAlt_Office2003Blue">
+					<td class="dxgvDetailButton_Office2003Blue dxgv" align="right" style="border-right-width:0px;overflow:visible;"><img class="dxGridView_gvDetailCollapsedButtonRtl_Office2003Blue" onclick="aspxGVShowDetailRow('ctl00_ContentPlaceHolder1_grdItems',1);event.cancelBubble = true" src="/DXR.axd?r=1_5-w5pas" alt="[Expand]" style="cursor:pointer;"></td><td class="dxgv" align="right" style="border-right-width:0px;">01922</td><td class="dxgv" align="right">LETROZOLE 2.5 mg TABLET ORAL</td><td class="dxgv" align="right">90</td><td class="dxgv" align="right">دو بار در روز يک عدد-Tab/Cap
+</td><td class="dxgv" align="right" style="color:Blue;">96.38%</td><td class="dxgv" align="right">2880000</td><td class="dxgv" align="right">2775852</td><td class="dxgv" align="right">937332</td><td class="dxgv" align="right">1838520</td><td class="dxgv" align="right">104148</td><td class="dxgv" align="right">&nbsp;</td><td class="dxgv" align="right" style="color:Red;">0</td><td class="dxgv" align="right" style="border-left-width:0px;">دو بار در روز يک عدد-Tab/Cap
+</td><td class="dxgvTable_Office2003Blue"></td>
+				</tr><tr id="ctl00_ContentPlaceHolder1_grdItems_DXDataRow2" class="dxgvDataRow_Office2003Blue">
+					<td class="dxgvDetailButton_Office2003Blue dxgv" align="right" style="border-right-width:0px;overflow:visible;"><img class="dxGridView_gvDetailCollapsedButtonRtl_Office2003Blue" onclick="aspxGVShowDetailRow('ctl00_ContentPlaceHolder1_grdItems',2);event.cancelBubble = true" src="/DXR.axd?r=1_5-w5pas" alt="[Expand]" style="cursor:pointer;"></td><td class="dxgv" align="right" style="border-right-width:0px;">01303</td><td class="dxgv" align="right">VITAMIN D3 50000 [iU] CAPSULE, LIQUID FILLED ORAL</td><td class="dxgv" align="right">10</td><td class="dxgv" align="right">هفته اي يک بار يک عدد-Tab/Cap
+</td><td class="dxgv" align="right" style="color:Blue;">95.92%</td><td class="dxgv" align="right">470000</td><td class="dxgv" align="right">450820</td><td class="dxgv" align="right">172620</td><td class="dxgv" align="right">278200</td><td class="dxgv" align="right">0</td><td class="dxgv" align="right">&nbsp;</td><td class="dxgv" align="right" style="color:Red;">19180</td><td class="dxgv" align="right" style="border-left-width:0px;">هفته اي يک بار يک عدد-Tab/Cap
+</td><td class="dxgvTable_Office2003Blue"></td>
+				</tr><tr id="ctl00_ContentPlaceHolder1_grdItems_DXDataRow3" class="dxgvDataRow_Office2003Blue dxgvDataRowAlt_Office2003Blue">
+					<td class="dxgvDetailButton_Office2003Blue dxgv" align="right" style="border-right-width:0px;overflow:visible;"><img class="dxGridView_gvDetailCollapsedButtonRtl_Office2003Blue" onclick="aspxGVShowDetailRow('ctl00_ContentPlaceHolder1_grdItems',3);event.cancelBubble = true" src="/DXR.axd?r=1_5-w5pas" alt="[Expand]" style="cursor:pointer;"></td><td class="dxgv" align="right" style="border-right-width:0px;">50712</td><td class="dxgv" align="right">PALBOCICLIB 125 mg CAPSULE ORAL</td><td class="dxgv" align="right">21</td><td class="dxgv" align="right">يک بار در روز يک عدد-Tab/Cap
+</td><td class="dxgv" align="right" style="color:Blue;">78.1%</td><td class="dxgv" align="right">174300000</td><td class="dxgv" align="right">136133511</td><td class="dxgv" align="right">89055144</td><td class="dxgv" align="right">47078367</td><td class="dxgv" align="right">25444322</td><td class="dxgv" align="right">&nbsp;</td><td class="dxgv" align="right" style="color:Red;">12722167</td><td class="dxgv" align="right" style="border-left-width:0px;">يک بار در روز يک عدد-Tab/Cap
+</td><td class="dxgvTable_Office2003Blue"></td>
+				</tr><tr id="ctl00_ContentPlaceHolder1_grdItems_DXFooterRow" class="dxgvFooter_Office2003Blue">
+					<td class="dxgvIndentCell dxgv" align="right" style="border-left-width:0px;border-right-width:0px;border-bottom-width:0px;">&nbsp;</td><td class="dxgv" align="right" style="border-right-width:0px;border-bottom-width:0px;">&nbsp;</td><td class="dxgv" align="right" style="border-bottom-width:0px;">&nbsp;</td><td class="dxgv" align="right" style="text-align:Right;border-bottom-width:0px;">&nbsp;</td><td class="dxgv" align="right" style="border-bottom-width:0px;">&nbsp;</td><td class="dxgv" align="right" style="border-bottom-width:0px;">&nbsp;</td><td class="dxgv" align="right" style="text-align:Right;border-bottom-width:0px;">&nbsp;</td><td class="dxgv" align="right" style="text-align:Right;border-bottom-width:0px;">&nbsp;</td><td class="dxgv" align="right" style="text-align:Right;border-bottom-width:0px;">&nbsp;</td><td class="dxgv" align="right" style="text-align:Right;border-bottom-width:0px;">&nbsp;</td><td class="dxgv" align="right" style="text-align:Right;border-bottom-width:0px;">&nbsp;</td><td class="dxgv" align="right" style="text-align:Right;border-bottom-width:0px;">&nbsp;</td><td class="dxgv" align="right" style="text-align:Right;border-bottom-width:0px;">&nbsp;</td><td class="dxgv" align="right" style="border-left-width:0px;border-bottom-width:0px;">&nbsp;</td>
+				</tr>
+			</tbody></table>
