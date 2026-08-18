@@ -53,14 +53,14 @@
 
     rows.forEach(row => {
       const cells = row.querySelectorAll("td.dxgv");
-      if (cells.length >= 12) {
+      if (cells.length >= 13) {
         const code = cells[1].innerText.trim();
         const name = cells[2].innerText.trim();
         const qty = parseInt(cells[3].innerText.trim(), 10) || 0;
         
-        // ایندکس ۶: مجموع کل | ایندکس ۱۱: سهم بیمار
+        // ایندکس ۶: مجموع کل | ایندکس ۱۲: سهم بیمار
         const total = parseFloat(cells[6].innerText.trim().replace(/,/g, '')) || 0;
-        const patientPaid = parseFloat(cells[11].innerText.trim().replace(/,/g, '')) || 0;
+        const patientPaid = parseFloat(cells[12].innerText.trim().replace(/,/g, '')) || 0;
         
         // فرمول جدید: (مبلغ کل - سهم بیمار) تقسیم بر مبلغ کل * 100
         const officialPercent = total > 0 ? (((total - patientPaid) / total) * 100).toFixed(7) : "0.0000000";
